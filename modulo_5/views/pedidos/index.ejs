@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+</head>
+<body>
+    <h1>Rota raiz de pedidos da Pizzaria do <%= nome %>!</h1>
+
+    <ul>
+        <% pedidos.map((pedido) => { %>
+            <li>Pedido do <%= pedido.cliente.nome %> <%= pedido.cliente.sobrenome %></li>
+            <p>Sabor: <%= pedido.pizzas[0].sabor %></p>
+            <p>Quantidade: <%= pedido.pizzas[0].quantidade %></p>
+            <p>Forma de pagamento: <%= pedido.metodoDePagamento %></p>
+            <p>Total: <%= pedido.total %></p>
+            <p>Pago: <%= pedido.pago %></p>
+        <% }) %>
+    </ul>
+</body>
+</html>
